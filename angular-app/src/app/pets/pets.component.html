@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<h2>These pets are looking for a home!</h2>
+<a [routerLink]="['new']">Add New Pet</a>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of allpets">
+        <td>{{pet.name}}</td>
+        <td>{{pet.type}}</td>
+        <td> <a  class="btn btn-link" [routerLink]="['details', pet._id]">Details</a> <a class="btn btn-link" [routerLink]="['edit', pet._id]">Update</a> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

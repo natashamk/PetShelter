@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<h3>Know of a pet needing a home?</h3>
+<p *ngIf="errMsg">{{errMsg}}</p>
+<form (submit)="createPet()" #myform="ngForm">
+Pet Name: <input type="text" name="name" [(ngModel)]="pet.name" required>
+Pet Type: <input type="text" name="type" [(ngModel)]="pet.type" required>
+Pet Description: <input type="text" name="descrtiption" [(ngModel)]="pet.description" required>
+<h4>Skills (optional)</h4>
+Skill 1 : <input type="text" name="skill1" [(ngModel)]="pet.skill1">
+Skill 2 : <input type="text" name="skill2" [(ngModel)]="pet.skill2">
+Skill 3 : <input type="text" name="skill3" [(ngModel)]="pet.skill3">
+<button class="btn btn-primary" type="submit" value="Add" >Add</button>
+</form>
+<button class="btn btn-primary" (click)="NavtoPets()">Cancel</button>
+
